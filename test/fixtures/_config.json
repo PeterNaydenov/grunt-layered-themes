@@ -1,0 +1,15 @@
+
+{
+    "engine"       : "3devices"
+  , "resolution"   : { 
+	  				    "mobile" : "500" 
+	  				  , "hq"     : "1000" 
+	  		       } 
+  , "themes"       : { 
+	  				     "default" : "desk"
+	  				    , "tablet" : "mini"
+	  				    , "mobile" : "mini"
+	  			   }
+  , "expand"      : {}
+
+}
