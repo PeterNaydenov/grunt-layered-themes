@@ -11,17 +11,7 @@
 module.exports = function(grunt) {
 
   // Project configuration.
-  grunt.initConfig({
-    jshint: {
-      all: [
-        'Gruntfile.js',
-        'tasks/*.js',
-        '<%= nodeunit.tests %>'
-      ],
-      options: {
-        jshintrc: '.jshintrc'
-      }
-    },
+  grunt.initConfig( {
 
     // Before generating any new files, remove any previously-created files.
     clean: {
@@ -41,7 +31,7 @@ module.exports = function(grunt) {
 
     // Unit tests.
     nodeunit: {
-      tests: ['test/*_test.js']
+        tests: ['test/*_test.js']
     }
 
   });
