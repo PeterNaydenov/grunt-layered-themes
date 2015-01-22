@@ -70,6 +70,7 @@ module.exports = function(grunt) {
 
 
 
+
 // STEP 2 - Apply engine. Result - options.saveConfig
 ( function () {
 
@@ -79,16 +80,19 @@ module.exports = function(grunt) {
       3. Prepare save configuration
    */
 
-  var engine = require ( options.config.engine );
+  var 
+          engine = require ( options.config.engine )
+        , error = [];
   
-  engine.start ( options );
+  error = engine.start ( options , error );
+  if ( error ) grunt.fail.fatal ( error );
 
 })(); // step 2
 
 
 
 
-
+// console.log(options.saveConfig.desk.include)
 
 
 
@@ -106,7 +110,6 @@ module.exports = function(grunt) {
           , defaultName  = 'default'
           ;
 
-// TODO : fix this. We have mix of names and devices;
 content[defaultName] = {};
 
 // read files from default theme and define keys

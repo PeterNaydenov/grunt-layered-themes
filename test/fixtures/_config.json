@@ -1,15 +1,18 @@
 
 {
-    "engine"       : "3devices"
+    "engine"       : "layered_themes_3devices"
   , "resolution"   : { 
 	  				    "mobile" : "500" 
 	  				  , "hq"     : "1000" 
-	  		       } 
+	  		       }
+  , "folders"      : [ "mob", "tab", "desk" ]
   , "themes"       : { 
 	  				     "default" : "desk"
 	  				    , "tablet" : "mini"
 	  				    , "mobile" : "mini"
-	  			   }
+	  			   } 
   , "expand"      : {}
+  , "include"     : {}
+  , "extra"       : {}
 
 }
