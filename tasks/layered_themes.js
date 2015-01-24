@@ -71,7 +71,7 @@ module.exports = function(grunt) {
 
 
 
-// STEP 2 - Apply engine. Result - options.saveConfig
+// STEP 2 - Apply the engine. Result - options.saveConfig
 ( function () {
 
    /*

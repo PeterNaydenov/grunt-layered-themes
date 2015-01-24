@@ -99,6 +99,41 @@ Configuration file is simple 'json' file and here is the minimal content needed:
 Engine attribute contains name of the theme engine or link to your custom engine file.
 Installation complete!
 
+
+
+
+## How it works?
+1. Read settings from configuration file(_config.json) and prepare the framework configuration;
+2. Start the engine. Engine prepares list of rules related to result files (content, media queries, folders). This set of rules is named 'save matrix';
+3. Collect content from default theme. Apply key-concatinaion in default theme content. Fulfil keys table.
+4. Collect content from other themes used according keys table. Other information will be ignored. Themes that are not in use are completly ignored;
+5. Normalize 'save matrix' for computer use;
+6. Save files according rules provided by 'save matrix';
+
+
+
+
+## Dictionary
+- **Key**: Filename or file prefix. Keys are simpliest instruction for file concatinination inside the theme.
+```
+      filename.css          file-name.css           file-header.css    file.css
+          |                   |                       |                  |
+      key 'filename'       key 'file'                key 'file'        key 'file'
+```
+Filename will be filename in result folder. 'file.css' will combine content of file.css,file-name.css,file-header.css;
+
+- **Suffix**: Option to organize content from same key on different way. Include different variables and libraries or set different media queries. Suffixes are controlled by save matrix object.
+
+- **Theme** : Full set of CSS files closed in one folder. Name of the theme is name of the folder. All themes are subfolders of 'src' folder;
+ 
+- **Save Matrix** : Set of rules about combining content, media queries and folders. Save matrix is comming as a result of theme engine;
+
+- **Theme engine**: Algorithm that provide as a result 'save matrix'. The simplest engine is just manual edit of 'save matrix';
+
+
+
+
+
 ### Note:
 
 Combining with other CSS post-processes. Using theme engine with CSS preprocessor:
