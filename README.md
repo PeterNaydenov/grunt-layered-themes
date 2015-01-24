@@ -46,13 +46,13 @@ Code explains that mobile and tablet devices will use same CSS theme - 'mini'. D
 
 
 ## Installation
-Install 'Layered Themes' framework with npm install command:
+Install 'Layered Themes' framework:
 
 ```
 npm install grunt-layered-themes --save-dev
 ```
 
-'Layered Themes' framework is comming with no engines preinstalled. That's why you should install them by yourself. Write your custom configration* is also an option.
+'Layered Themes' framework is coming with no engines preinstalled. Install them or write your custom configration*.
 
 ```
 npm install layered-themes-3devices --save-dev
@@ -105,8 +105,8 @@ Installation complete!
 ## How it works?
 1. Read settings from configuration file(_config.json) and prepare the framework configuration;
 2. Start the engine. Engine prepares list of rules related to result files (content, media queries, folders). This set of rules is named 'save matrix';
-3. Collect content from default theme. Apply key-concatinaion in default theme content. Fulfil keys table.
-4. Collect content from other themes used according keys table. Other information will be ignored. Themes that are not in use are completly ignored;
+3. Collect content from default theme. Apply key-concatinaion in default theme content. Fulfil 'content keys' table.
+4. Collect content from other themes according 'content keys' table. Themes that are not in use are completly ignored;
 5. Normalize 'save matrix' for computer use;
 6. Save files according rules provided by 'save matrix';
 
@@ -114,7 +114,7 @@ Installation complete!
 
 
 ## Dictionary
-- **Key**: Filename or file prefix. Keys are simpliest instruction for file concatinination inside the theme.
+- **Content Key/Key**: Filename or file prefix. Keys are simpliest instruction for file concatinination inside the theme. Content keys from default theme form 'content key table'. Other theme keys that are not in 'content key table' will be ignored.
 ```
       filename.css          file-name.css           file-header.css    file.css
           |                   |                       |                  |
@@ -126,11 +126,16 @@ Filename will be filename in result folder. 'file.css' will combine content of f
 
 - **Theme** : Full set of CSS files closed in one folder. Name of the theme is name of the folder. All themes are subfolders of 'src' folder;
  
-- **Save Matrix** : Set of rules about combining content, media queries and folders. Save matrix is comming as a result of theme engine;
+- **Save Matrix** : Set of rules about combining content, media queries and folders. Save matrix is coming as a result of theme engine;
 
 - **Theme engine**: Algorithm that provide as a result 'save matrix'. The simplest engine is just manual edit of 'save matrix';
 
+## Read More
 
+- [Configuration file](https://github.com/PeterNaydenov/grunt-layered-themes/wiki/1.-Configuration-File)
+- [SaveMatrix](https://github.com/PeterNaydenov/grunt-layered-themes/wiki/2.-Save-Matrix)
+- [Good Practices](https://github.com/PeterNaydenov/grunt-layered-themes/wiki/3.-Good-Practices)
+- [Create Custom Theme Engine](https://github.com/PeterNaydenov/grunt-layered-themes/wiki/4.-Create-Custom-Theme-Engine)
 
 
 
