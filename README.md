@@ -130,33 +130,45 @@ Filename will be filename in result folder. 'file.css' will combine content of f
 
 - **Theme engine**: Algorithm that provide as a result 'save matrix'. The simplest engine is just manual edit of 'save matrix';
 
+ - **Slave Themes**: All theme names used in congiguration that are not used as theme default.
+ - **MainKey: Internal framework mechanism provides auto renaming of mainKey. MainKey is content key with name of the theme. Default renaming is set to 'main'. Example:
+ ```
+ |-desk|
+ |     |-contact.css
+ |     |-product.css
+ |     |-desk-header.css
+ |     |-mini-slave.css
+ |
+ |-mini|
+       |-desk-slave.css
+       |-mini-all.css
+
+
+ ```
+ If theme 'desk' is set as default:
+ - 'desk' content key (desk-header.css) will become 'main' content key. 
+ - Theme 'mini' is slave theme and will convert 'desk' content key(desk-slave.css) as 'main'.
+ If theme 'mini' is set as default:
+ - 'mini' content key (mini-all.css) will become 'main' content key.
+ - Theme 'desk' is slave theme and will transform 'mini' key(mini-slave.css) as 'main'.
+
+ MainKey is an abstraction level that provides option combine themes as default or slaves without heavy refactoring. It's also a visual clue how themes are connected.
+
 ## Read More
 
 - [Configuration file](https://github.com/PeterNaydenov/grunt-layered-themes/wiki/1.-Configuration-File)
 - [SaveMatrix](https://github.com/PeterNaydenov/grunt-layered-themes/wiki/2.-Save-Matrix)
 - [Good Practices](https://github.com/PeterNaydenov/grunt-layered-themes/wiki/3.-Good-Practices)
 - [Create Custom Theme Engine](https://github.com/PeterNaydenov/grunt-layered-themes/wiki/4.-Create-Custom-Theme-Engine)
+- [Combine with Other CSS Processing](https://github.com/PeterNaydenov/grunt-layered-themes/wiki/5.-Combine-with-Other-CSS-Processing.)
 
 
+## Release History
 
-### Note:
+### 0.1.4 (2015-01-25)
 
-Combining with other CSS post-processes. Using theme engine with CSS preprocessor:
-```
-css-dev --> tmp-css  ------ o ---------- o ----------------- > css 
-                            |            |
-                    autoprefixer     CSS preprocessor
-```
-Set 'target' to temporary place( folder ). Apply autoprefixer or/and preprocessors over the result of theme engine and then save in production folder.
-
-
-Using just CSS:
-```
-css-dev --> css
-```
-
-If you are using pure CSS you are save to write results directly in production folder.
-
+ - [x] Documentation improvement;
+ - [x] Configuration access to 'mainKey';
 
 
 ### More Documentation will be provided soon...

@@ -56,6 +56,11 @@ module.exports = function(grunt) {
 
     delete settings.themes.default;
 
+    if ( settings.mainKey ) {
+                              options.mainKey = settings.mainKey;
+                              delete settings.mainKey;
+                            }
+
     for ( var set in settings) {  config[set] = settings[set]; }
 
     options.config = config;
