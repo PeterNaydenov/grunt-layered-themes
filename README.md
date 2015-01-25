@@ -131,7 +131,7 @@ Filename will be filename in result folder. 'file.css' will combine content of f
 - **Theme engine**: Algorithm that provide as a result 'save matrix'. The simplest engine is just manual edit of 'save matrix';
 
  - **Slave Themes**: All theme names used in congiguration that are not used as theme default.
- - **MainKey: Internal framework mechanism provides auto renaming of mainKey. MainKey is content key with name of the theme. Default renaming is set to 'main'. Example:
+ - **MainKey**: Internal framework mechanism provides auto renaming of mainKey. MainKey is content key with name of the theme. Default renaming is set to 'main'. Example:
  ```
  |-desk|
  |     |-contact.css
