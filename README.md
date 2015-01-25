@@ -114,7 +114,8 @@ Installation complete!
 
 
 ## Dictionary
-- **Content Key/Key**: Filename or file prefix. Keys are simpliest instruction for file concatinination inside the theme. Content keys from default theme form 'content key table'. Other theme keys that are not in 'content key table' will be ignored.
+###Content Key/Key
+Filename or file prefix. Keys are simpliest instruction for file concatinination inside the theme. Content keys from default theme form 'content key table'. Other theme keys that are not in 'content key table' will be ignored.
 ```
       filename.css          file-name.css           file-header.css    file.css
           |                   |                       |                  |
@@ -122,16 +123,23 @@ Installation complete!
 ```
 Filename will be filename in result folder. 'file.css' will combine content of file.css,file-name.css,file-header.css;
 
-- **Suffix**: Option to organize content from same key on different way. Include different variables and libraries or set different media queries. Suffixes are controlled by save matrix object.
+###Suffix 
+Option to organize content from same key on different way. Include different variables and libraries or set different media queries. Suffixes are controlled by save matrix object.
 
-- **Theme** : Full set of CSS files closed in one folder. Name of the theme is name of the folder. All themes are subfolders of 'src' folder;
+###Theme
+Full set of CSS files closed in one folder. Name of the theme is name of the folder. All themes are subfolders of 'src' folder;
  
-- **Save Matrix** : Set of rules about combining content, media queries and folders. Save matrix is coming as a result of theme engine;
+###Save Matrix
+Set of rules about combining content, media queries and folders. Save matrix is coming as a result of theme engine;
 
-- **Theme engine**: Algorithm that provide as a result 'save matrix'. The simplest engine is just manual edit of 'save matrix';
+###Theme engine
+Algorithm that provide as a result 'save matrix'. The simplest engine is just manual edit of 'save matrix';
 
-- **Slave Themes**: All theme names used in congiguration that are not used as theme default.
-- **MainKey**: Internal framework mechanism provides auto renaming of mainKey. MainKey is content key with name of the theme. Default renaming is set to 'main'. Example:
+###Slave Themes
+All theme names used in congiguration that are not used as theme default.
+
+###MainKey
+Internal framework mechanism provides auto renaming of mainKey. MainKey is content key with name of the theme. Default renaming is set to 'main'. Example:
 
 ```
  |-desk|
@@ -160,6 +168,10 @@ If theme 'mini' is set as default:
 
 MainKey is an abstraction level that provides option combine themes as default or slaves without heavy refactoring process. It's also provides a visual clue how themes are connected.
 
+
+
+
+
 ## Read More
 
 - [Configuration file](https://github.com/PeterNaydenov/grunt-layered-themes/wiki/1.-Configuration-File)
@@ -171,14 +183,13 @@ MainKey is an abstraction level that provides option combine themes as default o
 
 ## Release History
 
+### 0.1.5 (2015-01-25)
+ - [x] Documentation restructuring;
+
 ### 0.1.4 (2015-01-25)
 
  - [x] Documentation improvement;
  - [x] Configuration access to 'mainKey';
-
-
-### More Documentation will be provided soon...
-
 
 
 
