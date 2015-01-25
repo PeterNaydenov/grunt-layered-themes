@@ -130,9 +130,10 @@ Filename will be filename in result folder. 'file.css' will combine content of f
 
 - **Theme engine**: Algorithm that provide as a result 'save matrix'. The simplest engine is just manual edit of 'save matrix';
 
- - **Slave Themes**: All theme names used in congiguration that are not used as theme default.
- - **MainKey**: Internal framework mechanism provides auto renaming of mainKey. MainKey is content key with name of the theme. Default renaming is set to 'main'. Example:
- ```
+- **Slave Themes**: All theme names used in congiguration that are not used as theme default.
+- **MainKey**: Internal framework mechanism provides auto renaming of mainKey. MainKey is content key with name of the theme. Default renaming is set to 'main'. Example:
+
+```
  |-desk|
  |     |-contact.css
  |     |-product.css
@@ -143,16 +144,21 @@ Filename will be filename in result folder. 'file.css' will combine content of f
        |-desk-slave.css
        |-mini-all.css
 
+```
 
- ```
- If theme 'desk' is set as default:
- - 'desk' content key (desk-header.css) will become 'main' content key. 
- - Theme 'mini' is slave theme and will convert 'desk' content key(desk-slave.css) as 'main'.
- If theme 'mini' is set as default:
- - 'mini' content key (mini-all.css) will become 'main' content key.
- - Theme 'desk' is slave theme and will transform 'mini' key(mini-slave.css) as 'main'.
+If theme 'desk' is set as default:
 
- MainKey is an abstraction level that provides option combine themes as default or slaves without heavy refactoring. It's also a visual clue how themes are connected.
+- 'desk' content key (desk-header.css) will become 'main' content key. 
+- Theme 'mini' is slave theme and will convert 'desk' content key(desk-slave.css) as 'main'.
+
+If theme 'mini' is set as default:
+
+- 'mini' content key (mini-all.css) will become 'main' content key.
+- Theme 'desk' is slave theme and will transform 'mini' key(mini-slave.css) as 'main'.
+
+
+
+MainKey is an abstraction level that provides option combine themes as default or slaves without heavy refactoring process. It's also provides a visual clue how themes are connected.
 
 ## Read More
 
