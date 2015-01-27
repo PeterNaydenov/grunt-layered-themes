@@ -1,6 +1,6 @@
 # Layered-themes for Grunt
 
-Plugin framework for CSS themes. Theme engines are comming as plugins. Combine with any CSS preprocessor for unlimited power (LESS, SASS, Stylus, Rework, or other).
+Plugin framework for CSS themes. Theme engines are comming as plugins. Combine with any CSS post-process for unlimited power (LESS, SASS, Stylus, Rework, autoprefixer, or other).
 
 ## Why to use it?
  - Organize CSS rules in small and easy to understand snippets;
@@ -13,32 +13,32 @@ Plugin framework for CSS themes. Theme engines are comming as plugins. Combine w
 
 
 ## Welcome Examples
-- Chunks: Automatic accumulative prefixes. 'product-header.css' and 'product-footer.css' will provide one result file 'product.css';
-- MQ limits: Configuration file has such a snippet:
+- Chunks: Automatic accumulative prefixes. Layered themes will aggregate content of 'product-header.css' and 'product-footer.css' and will provide one result file 'product.css';
+- MQ delimiters: Configuration file has such a snippet:
 
 ```json
  "resolution"   : { 
-  				    "mobile" : "500" 
-  				  , "hq"     : "1000" 
-  		       }
+              "mobile" : "500" 
+            , "hq"     : "1000" 
+             }
 
 ```
 This code explains that we have 3 optional media queries. From 0 to 500px, from 501 to 1000px, from 1000px to infinity. If your mobile design should be applied up to 700px you can change just mobile border value:
 
 ```json
    "resolution" : { 
-	  			    "mobile" : "700" 
-	  			  , "hq"     : "1000" 
-	  		   }
+              "mobile" : "700" 
+            , "hq"     : "1000" 
+           }
 ```
 - Apply themes: Again from configuration file
 
 ```json
  "themes" : { 
-	  		    "default" : "desk"
-	  		   , "tablet" : "mini"
-	  		   , "mobile" : "mini"
-  	     } 
+            "default" : "desk"
+           , "tablet" : "mini"
+           , "mobile" : "mini"
+         } 
 ```
 Code explains that mobile and tablet devices will use same CSS theme - 'mini'. Desktop was not mentioned that's why will use default CSS theme - desk. Framework will create media queries (MQ) for you. From 0 to HQ for 'mini' CSS rules and other from HQ to infinity for desktop rules.
 
@@ -57,7 +57,7 @@ npm install grunt-layered-themes --save-dev
 ```
 npm install layered-themes-3devices --save-dev
 ```
-> Example shows how to install 3devices theme engine. You can select any other engine or write one by yourself. It's easy and the documentation will be provided soon as possible.
+> Example shows how to install 3devices theme engine. You can select any other engine or [write one by yourself](https://github.com/PeterNaydenov/grunt-layered-themes/wiki/4.-Create-Custom-Theme-Engine).
 
 
 
@@ -77,7 +77,7 @@ layered_themes : {
                                         } ,
                            }
 ```
- - **src**: your development folder. Contain all CSS theme folders;
+ - **src**: CSS development folder. Contain all CSS theme folders;
  - **target**: framework will write result in this folder
  - **configFile**: path to specific engine configuration file. Engine name, resolutions and theme organization are set into it.
 
@@ -88,12 +88,12 @@ Configuration file is simple 'json' file and here is the minimal content needed:
 {
     "engine"       : "layered_themes_3devices"
   , "resolution"   : { 
-	  				    "mobile" : "500" 
-	  				  , "hq"     : "1000" 
-	  		       }
+                "mobile" : "500" 
+              , "hq"     : "1000" 
+               }
   , "themes"       : { 
-	  				     "default" : "desk"
-	  			   }
+                 "default" : "desk"
+             }
 }
  ```
 Engine attribute contains name of the theme engine or link to your custom engine file.
@@ -183,6 +183,10 @@ MainKey is an abstraction level that provides option combine themes as default o
 
 ## Release History
 
+### 0.1.6 (2015-01-27)
+ - [x] npmignore file added;
+ - [x] Documentation update;
+
 ### 0.1.5 (2015-01-25)
  - [x] Documentation restructuring;
 
@@ -190,7 +194,5 @@ MainKey is an abstraction level that provides option combine themes as default o
 
  - [x] Documentation improvement;
  - [x] Configuration access to 'mainKey';
-
-
 
 
