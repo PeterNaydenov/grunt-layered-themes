@@ -85,19 +85,36 @@ module.exports = function(grunt) {
       3. Prepare save configuration
    */
 
-  var 
-          engine = require ( options.config.engine )
-        , error = [];
+   var 
+          npmEngine   = true
+        , dir         = process.cwd() + path.sep
+        , error       = []
+        , engine
+        ;
+
+try {
+                require.resolve ( options.config.engine );
+            }
+catch ( e ) {
+                npmEngine = false;
+            }
+
+if ( !npmEngine && !fs.existsSync(dir+options.config.engine) )   grunt.fail.fatal ( 'Wrong engine name --> ' + options.config.engine );
+
+if ( npmEngine ) engine = require (       options.config.engine );
+else             engine = require ( dir + options.config.engine );
+
+
   
-  error = engine.start ( options , error );
-  if ( error ) grunt.fail.fatal ( error );
+error = engine.start ( options , error );
+if ( error ) grunt.fail.fatal ( error );
 
 })(); // step 2
 
 
 
 
-// console.log(options.saveConfig.desk.include)
+
 
 
 

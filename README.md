@@ -183,16 +183,23 @@ MainKey is an abstraction level that provides option combine themes as default o
 
 ## Release History
 
+### 0.1.7 (2015-01-31)
+ - [x] bug-fix : Loading custom engine starts from npm module folder. Should starts from project's root folder;
+ - [x] Error message if plugin engine doesn't exists;
+
 ### 0.1.6 (2015-01-27)
  - [x] npmignore file added;
  - [x] Documentation update;
+ - [ ] Bug: Loading custom engine starts from npm module folder. Should starts from project's root folder;
 
 ### 0.1.5 (2015-01-25)
  - [x] Documentation restructuring;
+ - [ ] Bug: Loading custom engine starts from npm module folder. Should starts from project's root folder;
 
 ### 0.1.4 (2015-01-25)
 
  - [x] Documentation improvement;
  - [x] Configuration access to 'mainKey';
+ - [ ] Bug: Loading custom engine starts from npm module folder. Should starts from project's root folder;
 
 
